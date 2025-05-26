@@ -36,22 +36,7 @@ SessionLocal = sessionmaker(bind=engine)
 def init_db():
     Base.metadata.create_all(bind=engine)
     
-## uncleaned transactions (transactions.csv) csv up top Postgres
-df_uncleaned_csv = pd.read_csv("/Users/k/Documents/TUC/DataQuality/python-bank-project-start/data/transactions.csv")
-df_uncleaned_csv.to_sql("Transaction", engine, if_exists='replace',index=False)
-print("CSV importerad till Postgres.")
-
 ## cleaned transactions (transactions_cleaned.csv) csv up to Postgres
-df_cleaned_csv = pd.read_csv("/Users/k/Documents/TUC/DataQuality/python-bank-project-start/transactions_cleaned.csv")
+df_cleaned_csv = pd.read_csv("/Users/k/Documents/TUC/DataQuality/python-bank-project-start/data/transactions_cleaned.csv")
 df_cleaned_csv.to_sql("Transaction_Cleaned", engine, if_exists='replace', index=False)
-print("CSV imported till Postgres.")
-
-## sebank_customers_with_account csv up to Postgres (1)
-df_cleaned_csv = pd.read_csv("/Users/k/Documents/TUC/DataQuality/python-bank-project-start/data/sebank_customers_with_accounts.csv")
-df_cleaned_csv.to_sql("Sebank_Customers_1", engine, if_exists='replace', index=False)
-print("CSV imported till Postgres.")
-
-## sebank_customers_with_account csv up to Postgres (2)
-df_cleaned_csv = pd.read_csv("/Users/k/Documents/TUC/DataQuality/python-bank-project-start/sebank_customers_with_accounts.csv")
-df_cleaned_csv.to_sql("Sebank_Customers_2", engine, if_exists='replace', index=False)
 print("CSV imported till Postgres.")
