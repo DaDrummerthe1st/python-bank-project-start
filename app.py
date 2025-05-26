@@ -53,21 +53,20 @@ if __name__ == "__main__":
     main()
     ## --
 
-
-#     # also add a savings account
-#     # nr = Account.generate_nr() # 8064047892
-#     savings_account = bank.add_account(customer, "Savings_account", "8064047892")
-#     print(f"before savings dep {savings_account.get_balance()}")
-#     # make a deposit
-#     savings_account.deposit(300)
-#     print(f"after savings dep {savings_account.get_balance()}")
-#     # withdraw too much, should not change balance
-#     savings_account.withdraw(400)
-#     print(f"after savings overdraw attempt  {savings_account.get_balance()}")
-#     # withdraw a third
-#     savings_account.withdraw(100)
-#     print(f"after savings withdraw half {savings_account.get_balance()}")
-#     # withdraw the outstanding balance (effectively zeroing the account)
-#     balance = savings_account.get_balance()
-#     savings_account.withdraw(balance)
-#     print(f"after savings withdraw outstanding {savings_account.get_balance()}")
+# also add a savings account
+# nr = Account.generate_nr() # 8064047892
+savings_account = bank.add_account(customer, "Savings_account", "8064047892")
+print(f"before savings dep {savings_account.get_balance()}")
+# make a deposit
+savings_account.deposit(300)
+print(f"after savings dep {savings_account.get_balance()}")
+# withdraw too much, should not change balance
+savings_account.withdraw(400)
+print(f"after savings overdraw attempt  {savings_account.get_balance()}")
+# withdraw a third
+savings_account.withdraw(100)
+print(f"after savings withdraw half {savings_account.get_balance()}")
+# withdraw the outstanding balance (effectively zeroing the account)
+balance = savings_account.get_balance()
+savings_account.withdraw(balance)
+print(f"after savings withdraw outstanding {savings_account.get_balance()}")
