@@ -38,7 +38,7 @@ def main():
     init_db()
     db = SessionLocal()
     
-    customer = Customer(name= "Maggie", ssn="9002012288")
+    customer = Customer(name= "Maggie", ssn="900201-2288")
     db.add(customer)
     db.commit()
     
